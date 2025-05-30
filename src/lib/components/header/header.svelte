@@ -25,7 +25,24 @@
     <div class="info h-full flex flex-col align-middle justify-center">
       <p class="leading-3">Martin Melody</p>
       <p class="text-muted">
-        Commis Chef @ <span class="italic text-foreground">Langs</span>
+        <a
+          href="https://careersportal.ie/articles/article.php?article_id=694"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:underline cursor-pointer text-muted"
+        >
+          Commis Chef
+        </a>
+
+        @
+        <a
+          href="https://langs.ie/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="italic text-foreground hover:underline cursor-pointer"
+        >
+          Langs
+        </a>
       </p>
     </div>
   </div>
