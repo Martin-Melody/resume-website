@@ -70,11 +70,19 @@
       variant="ghost"
       size="icon"
       aria-label="Copy email to clipboard"
-      on:click={() => {
-        // navigator.clipboard.writeText("martinmelody.work@gmail.com");
-        toast.success("Email successfully copied to your clipboard.", {
-          description: "Email me with any questions or inquiries!",
-        });
+      on:click={async () => {
+        if (!navigator.clipboard) {
+          toast.error("Clipboard not supported by your browser.");
+          return;
+        }
+        try {
+          await navigator.clipboard.writeText("martinmelody.work@gmail.com");
+          toast.success("Email successfully copied to your clipboard.", {
+            description: "Email me with any questions or inquiries!",
+          });
+        } catch (err) {
+          toast.error("Failed to copy email.");
+        }
       }}
     >
       <Mail class="text-muted hover:text-foreground" />
