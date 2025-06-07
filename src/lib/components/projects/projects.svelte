@@ -4,9 +4,9 @@
   const projects = [
     {
       title: "LogIt",
-      description: "Offline-first workout tracker",
+      description: "Self-hosted, offline-first workout companion",
       content:
-        "Built with React Native, Capacitor, and PostgreSQL. Supports secure offline login and markdown editing.",
+        "Plan custom workout splits and track your progress locally, even when the gym has no signal. Features include a drag‑and‑drop split editor.",
       link: "https://github.com/LogIt-FitnessApp",
     },
     {

@@ -16,8 +16,8 @@
       <ul class="list-disc pl-5 text-muted-foreground text-sm">
         <li>Angular</li>
         <li>Ionic</li>
-        <li>HTML / SCSS</li>
         <li>SvelteKit</li>
+        <li>React Native</li>
       </ul>
     </div>
 
@@ -33,6 +33,7 @@
     <div>
       <p class="font-medium text-sm text-foreground mb-1">Databases</p>
       <ul class="list-disc pl-5 text-muted-foreground text-sm">
+        <li>SQLite</li>
         <li>PostgreSQL</li>
         <li>SQL Server</li>
         <li>Cosmos DB</li>
