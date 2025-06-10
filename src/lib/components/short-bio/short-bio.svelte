@@ -1,4 +1,4 @@
-<p class="text-muted-foreground pb-5">
+<p class="text-muted-foreground pb-5 text-justify text-sm md:text-base">
   Junior Software Developer with experience in C#, .NET Web API, and Angular.
   Interned with the Department of Social Protection, contributing to backend
   features, CI/CD pipelines, and testing. Currently building <a

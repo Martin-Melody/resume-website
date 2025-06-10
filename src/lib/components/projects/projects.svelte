@@ -1,6 +1,5 @@
 <script lang="ts">
   import * as Card from "$lib/components/ui/card";
-
   const projects = [
     {
       title: "LogIt",
@@ -15,7 +14,6 @@
       content:
         "Built with Ionic Angular, Express, and Cosmos DB. Hosted on Azure VM and Blob Storage. Integrated CI/CD via Azure DevOps and delivered a mobile-first responsive design.",
     },
-
     {
       title: "Insecure Web App (PenTesting Project)",
       description: "Full-stack security testing project",
@@ -23,7 +21,6 @@
         "Deliberately vulnerable Angular + .NET Web API app used for penetration testing with OWASP ZAP. Delivered an assessment report with identified vulnerabilities and mitigations.",
     },
   ];
-
   function handleClick(project: any) {
     console.log(`Clicked on project: ${project.title}`);
     if (project.link) {
@@ -32,10 +29,13 @@
   }
 </script>
 
-<div class="mt-10">
-  <p class="text-foreground font-semibold text-xl mb-4">Projects</p>
-
-  <div class="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+<div class="mt-6 md:mt-10">
+  <p class="text-foreground font-semibold text-lg md:text-xl mb-3 md:mb-4">
+    Projects
+  </p>
+  <div
+    class="grid gap-4 md:gap-6 grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3"
+  >
     {#each projects as project}
       <div
         role="button"
@@ -50,14 +50,19 @@
         }}
       >
         <Card.Root class="h-full flex flex-col">
-          <Card.Header>
-            <Card.Title>{project.title}</Card.Title>
-            <Card.Description>{project.description}</Card.Description>
+          <Card.Header class="pb-3 md:pb-4">
+            <Card.Title class="text-base md:text-lg">{project.title}</Card.Title
+            >
+            <Card.Description class="text-sm md:text-base"
+              >{project.description}</Card.Description
+            >
           </Card.Header>
-          <Card.Content class="flex-1">
-            <p>{project.content}</p>
+          <Card.Content class="flex-1 pt-0 md:pt-2">
+            <p class="text-sm md:text-base">{project.content}</p>
             {#if project.link}
-              <p class="mt-4 text-sm text-primary hover:underline">
+              <p
+                class="mt-3 md:mt-4 text-xs md:text-sm text-primary hover:underline"
+              >
                 View project →
               </p>
             {/if}

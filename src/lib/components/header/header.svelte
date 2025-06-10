@@ -10,36 +10,37 @@
 
 <!-- TODO: might need to change this avatar link at some point -->
 
-<div class=" container flex justify-between px-0 py-5 mt-20">
-  <div class="flex items-center">
-    <div class="avatar mr-3">
+<div
+  class="container px-4 py-5 mt-10 flex flex-col lg:flex-row justify-between items-center gap-4 lg:gap-0"
+>
+  <!-- Left Side: Avatar + Info -->
+  <div class="flex items-center text-center sm:text-left">
+    <div class="avatar mr-3 shrink-0">
       <Avatar.Root>
-        <Avatar.Image
-          src="https://media.licdn.com/dms/image/v2/D4E03AQE0RXm0Iy17Rg/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1709763771819?e=1753920000&v=beta&t=NoAN1i8g0umDWh7oHIs01j2NvQ7Cv7S6QNfgOFvc9HY"
-          alt="@shadcn"
-        />
+        <Avatar.Image src="/head-shot.webp" alt="Martin Melody headshot" />
         <Avatar.Fallback>MM</Avatar.Fallback>
       </Avatar.Root>
     </div>
 
-    <div class="info h-full flex flex-col align-middle justify-center">
-      <p class="leading-3">Martin Melody</p>
-      <p class="text-muted">
+    <div class="info flex flex-col justify-center">
+      <p class="leading-3 text-sm md:text-base lg:text-lg font-semibold">
+        Martin Melody
+      </p>
+      <p class="text-muted text-sm">
         <a
           href="https://careersportal.ie/articles/article.php?article_id=694"
           target="_blank"
           rel="noopener noreferrer"
-          class="hover:underline cursor-pointer text-muted"
+          class="hover:underline"
         >
           Commis Chef
         </a>
-
         @
         <a
           href="https://langs.ie/"
           target="_blank"
           rel="noopener noreferrer"
-          class="italic text-foreground hover:underline cursor-pointer"
+          class="italic text-foreground hover:underline"
         >
           Langs
         </a>
@@ -47,6 +48,7 @@
     </div>
   </div>
 
+  <!-- Right Side: Icons -->
   <div class="link-icons flex items-center gap-2">
     <Button
       variant="ghost"
@@ -77,7 +79,7 @@
         }
         try {
           await navigator.clipboard.writeText("martinmelody.work@gmail.com");
-          toast.success("Email successfully copied to your clipboard.", {
+          toast.success("Email copied to clipboard.", {
             description: "Email me with any questions or inquiries!",
           });
         } catch (err) {
@@ -91,6 +93,3 @@
     <ToggleTheme />
   </div>
 </div>
-
-<style>
-</style>
