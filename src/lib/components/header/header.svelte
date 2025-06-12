@@ -53,7 +53,7 @@
     <Button
       variant="ghost"
       size="icon"
-      on:click={() =>
+      onclick={() =>
         window.open("https://www.github.com/martin-melody", "_blank")}
     >
       <Github class="text-muted hover:text-foreground" />
@@ -62,7 +62,7 @@
     <Button
       variant="ghost"
       size="icon"
-      on:click={() =>
+      onclick={() =>
         window.open("https://www.linkedin.com/in/martinmelody/", "_blank")}
     >
       <Linkedin class="text-muted hover:text-foreground" />
@@ -72,7 +72,7 @@
       variant="ghost"
       size="icon"
       aria-label="Copy email to clipboard"
-      on:click={async () => {
+      onclick={async () => {
         if (!navigator.clipboard) {
           toast.error("Clipboard not supported by your browser.");
           return;

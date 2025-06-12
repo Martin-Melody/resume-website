@@ -41,8 +41,8 @@
         role="button"
         tabindex="0"
         class="h-full transition-shadow hover:shadow-lg cursor-pointer"
-        on:click={() => handleClick(project)}
-        on:keydown={(e) => {
+        onclick={() => handleClick(project)}
+        onkeydown={(e) => {
           if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
             handleClick(project);
