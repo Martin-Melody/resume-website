@@ -28,7 +28,7 @@
       </p>
       <p class="text-muted text-sm">
         <a
-          href="https://careersportal.ie/articles/article.php?article_id=694"
+          href="https://en.wikipedia.org/wiki/Chef#Commis"
           target="_blank"
           rel="noopener noreferrer"
           class="hover:underline"
