@@ -9,6 +9,14 @@
       link: "https://github.com/LogIt-FitnessApp",
     },
     {
+      title: "Resume Website",
+      description: "Personal portfolio and resume site",
+      content:
+        "Built with SvelteKit and Tailwind CSS, deployed via GitHub Pages using GitHub Actions for CI/CD. Fully responsive and highlights key projects and skills.",
+      link: "https://github.com/Martin-Melody/resume-website",
+    },
+
+    {
       title: "E-Learning App (Capstone)",
       description: "Cloud-hosted mobile/web education platform",
       content:
