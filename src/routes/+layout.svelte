@@ -16,7 +16,7 @@
   <link rel="canonical" href={data.canonical} />
 </svelte:head>
 
-<div class="mx-auto w-[80%] md:w-[50%]">
+<div class="mx-auto pb-5 w-[80%] md:w-[50%]">
   <Toaster position="bottom-right" />
   <ModeWatcher />
   <Header />
