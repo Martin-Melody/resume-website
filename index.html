@@ -3,23 +3,48 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/png" href="/favicon.png" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="%sveltekit.description%" />
 
+    <script>
+      (function () {
+        const consent = localStorage.getItem("ga_consent");
+
+        if (consent === "granted") {
+          // Inject GA script
+          const gtagScript = document.createElement("script");
+          gtagScript.setAttribute("async", "");
+          gtagScript.src =
+            "https://www.googletagmanager.com/gtag/js?id=G-3MH7YWV37D";
+          document.head.appendChild(gtagScript);
+
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            window.dataLayer.push(arguments);
+          }
+          window.gtag = gtag;
+
+          gtag("js", new Date());
+          gtag("config", "G-3MH7YWV37D", { anonymize_ip: true });
+        } else {
+          console.log("⛔️ GA not loaded — consent not granted.");
+        }
+      })();
+    </script>
+
     
 		<link href="./_app/immutable/assets/0.DA4gQIL1.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/entry/start.C_H5-Fi5.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/C-bjYnsP.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/B9b9pD8Q.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.BWNm2UBE.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/DDKXp-cc.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/WQZDM3ad.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/DIeogL5L.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/app.CkL7rIS5.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/DlmoCUQu.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.zs9vjgDa.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/Cbx20qXJ.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/CWj6FrbW.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/DGsxUEsz.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/0.91OdWY_R.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/CuPHqwBA.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.B2ZGTUH3.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/69_IOA4Y.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/CCC6XJcD.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/CIBP5QiC.js">
 		<link rel="modulepreload" href="./_app/immutable/nodes/2.CWG1ehzT.js"><!--[--><meta name="description" content="Portfolio of Martin Melody – Full-stack developer building open-source tools."/> <link rel="canonical" href="http://sveltekit-prerender/"/><!--]--><!--[--><!--[!--><!--]--> <!----><script>(function setInitialMode({ defaultMode = "system", themeColors: themeColors2, darkClassNames: darkClassNames2 = ["dark"], lightClassNames: lightClassNames2 = [], defaultTheme = "", modeStorageKey: modeStorageKey2 = "mode-watcher-mode", themeStorageKey: themeStorageKey2 = "mode-watcher-theme" }) {
   const rootEl = document.documentElement;
   const mode = localStorage.getItem(modeStorageKey2) || defaultMode;
@@ -50,7 +75,6 @@
   localStorage.setItem(modeStorageKey2, mode);
 })({"defaultMode":"system","darkClassNames":["dark"],"lightClassNames":[],"defaultTheme":"","modeStorageKey":"mode-watcher-mode","themeStorageKey":"mode-watcher-theme"});</script><!----><!--]--><title>Martin Melody | Software Developer</title>
   </head>
-
   <body data-sveltekit-preload-data="hover">
     <div style="display: contents"><!--[--><!--[--><!----><div class="mx-auto pb-5 w-[80%] md:w-[50%]"><section aria-label="Notifications alt+T" tabindex="-1" aria-live="polite" aria-relevant="additions text" aria-atomic="false" class="svelte-214svo"><!--[!--><!--]--></section><!----> <!--[!--><!--]--><!----> <div class="container px-4 py-5 mt-10 flex flex-col lg:flex-row justify-between items-center gap-4 lg:gap-0"><div class="flex items-center text-center sm:text-left"><div class="avatar mr-3 shrink-0"><!--#s1--><!--[!--><div class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full" id="bits-s1" data-avatar-root="" data-status="loading"><!----><!--#s2--><!--[!--><img alt="Martin Melody headshot" class="aspect-square h-full w-full" id="bits-s2" style="display: none;" data-status="loading" data-avatar-image="" src="/head-shot.webp" onload="this.__e=event" onerror="this.__e=event"/><!--]--><!----> <!--#s3--><!--[!--><span class="bg-muted flex h-full w-full items-center justify-center rounded-full" data-status="loading" data-avatar-fallback=""><!----><!---->MM<!----><!----></span><!--]--><!----><!----><!----></div><!--]--><!----></div> <div class="info flex flex-col justify-center"><p class="leading-3 text-sm md:text-base lg:text-lg font-semibold">Martin Melody</p> <p class="text-muted text-sm"><a href="https://en.wikipedia.org/wiki/Chef#Commis" target="_blank" rel="noopener noreferrer" class="hover:underline">Commis Chef</a> @ <a href="https://langs.ie/" target="_blank" rel="noopener noreferrer" class="italic text-foreground hover:underline">Langs</a></p></div></div> <div class="link-icons flex items-center gap-2"><!--[!--><button class="ring-offset-background focus-visible:ring-ring inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-10 w-10" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon lucide lucide-github text-muted hover:text-foreground"><!--[--><!----><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"><!----></path><!----><!----><path d="M9 18c-4.51 2-5-2-7-2"><!----></path><!----><!--]--><!----><!----><!----><!----></svg><!----></button><!--]--><!----> <!--[!--><button class="ring-offset-background focus-visible:ring-ring inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-10 w-10" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon lucide lucide-linkedin text-muted hover:text-foreground"><!--[--><!----><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"><!----></path><!----><!----><rect width="4" height="12" x="2" y="9"><!----></rect><!----><!----><circle cx="4" cy="4" r="2"><!----></circle><!----><!--]--><!----><!----><!----><!----></svg><!----></button><!--]--><!----> <!--[!--><button class="ring-offset-background focus-visible:ring-ring inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-10 w-10" type="button" aria-label="Copy email to clipboard"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon lucide lucide-mail text-muted hover:text-foreground"><!--[--><!----><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"><!----></path><!----><!----><rect x="2" y="4" width="20" height="16" rx="2"><!----></rect><!----><!--]--><!----><!----><!----><!----></svg><!----></button><!--]--><!----> <!--#s4--><!--[!--><button id="bits-s4" aria-haspopup="menu" aria-expanded="false" data-state="closed" data-dropdown-menu-trigger="" type="button"><!--[!--><button class="ring-offset-background focus-visible:ring-ring inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-10 w-10" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon lucide lucide-sun h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"><!--[--><!----><circle cx="12" cy="12" r="4"><!----></circle><!----><!----><path d="M12 2v2"><!----></path><!----><!----><path d="M12 20v2"><!----></path><!----><!----><path d="m4.93 4.93 1.41 1.41"><!----></path><!----><!----><path d="m17.66 17.66 1.41 1.41"><!----></path><!----><!----><path d="M2 12h2"><!----></path><!----><!----><path d="M20 12h2"><!----></path><!----><!----><path d="m6.34 17.66-1.41 1.41"><!----></path><!----><!----><path d="m19.07 4.93-1.41 1.41"><!----></path><!----><!--]--><!----><!----><!----><!----></svg><!----> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon lucide lucide-moon absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"><!--[--><!----><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"><!----></path><!----><!--]--><!----><!----><!----><!----></svg><!----> <span class="sr-only">Toggle theme</span><!----></button><!--]--><!----></button><!--]--><!----><!----> <!----><!--[!--><!--]--><!----><!----><!----><!----><!----></div></div><!----> <p class="text-muted-foreground pb-5 text-justify text-sm md:text-base">Junior Software Developer with experience in C#, .NET Web API, and Angular.
   Interned with the Department of Social Protection, contributing to backend
@@ -58,15 +82,15 @@
 			
 			<script>
 				{
-					__sveltekit_a3ranp = {
+					__sveltekit_1ul46eu = {
 						base: new URL(".", location).pathname.slice(0, -1)
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("./_app/immutable/entry/start.C_H5-Fi5.js"),
-						import("./_app/immutable/entry/app.CkL7rIS5.js")
+						import("./_app/immutable/entry/start.BWNm2UBE.js"),
+						import("./_app/immutable/entry/app.zs9vjgDa.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 2],
