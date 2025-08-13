@@ -5,7 +5,7 @@
       title: "LogIt",
       description: "Self-hosted, offline-first workout companion",
       content:
-        "Plan custom workout splits and track your progress locally, even when the gym has no signal. Features include a drag‑and‑drop split editor.",
+        "A training app built for lifters who want complete control of their data. LogIt makes it easy to plan, record, and review workouts anywhere—whether you’re online, offline, or running your own server.",
       link: "https://github.com/LogIt-FitnessApp",
     },
     {
