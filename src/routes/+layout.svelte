@@ -6,6 +6,7 @@
   import { Toaster } from "$lib/components/ui/sonner";
   import Header from "@/components/header/header.svelte";
   import Projects from "@/components/projects/projects.svelte";
+  import Blog from "@/components/blog/blog.svelte";
   import ShortBio from "@/components/short-bio/short-bio.svelte";
   import SkillsList from "@/components/skills-list/skills-list.svelte";
   import { loadGoogleAnalytics } from "$lib/utils/loadGoogleAnalytics";
@@ -58,5 +59,6 @@
   <ShortBio />
   <SkillsList />
   <Projects />
+  <Blog />
   <slot />
 </div>
