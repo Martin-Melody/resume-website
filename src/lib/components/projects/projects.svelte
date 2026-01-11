@@ -1,6 +1,14 @@
 <script lang="ts">
   import * as Card from "$lib/components/ui/card";
   const projects = [
+    
+{
+  title: "Loom",
+  description: "Offline-first TUI project and task management app",
+  content:
+    "A local-first project and task management application built in .NET. Loom uses Terminal.Gui for an interactive TUI, Spectre.Console for CLI commands, and open Markdown/JSON files for persistent storage. An ASP.NET Web API exposes Loom’s core functionality for integration with external tools, enabling future desktop, mobile, or automation clients.",
+  link: "https://github.com/Martin-Melody/Loom",
+},
     {
       title: "LogIt",
       description: "Self-hosted, offline-first workout companion",
