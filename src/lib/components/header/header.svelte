@@ -28,21 +28,20 @@
       </p>
       <p class="text-muted text-sm">
         <a
-          href="https://en.wikipedia.org/wiki/Chef#Commis"
           target="_blank"
           rel="noopener noreferrer"
           class="hover:underline"
         >
-          Commis Chef
+          Systems Engineer
         </a>
         @
         <a
-          href="https://langs.ie/"
+          href="https://www.cbe.ie/"
           target="_blank"
           rel="noopener noreferrer"
           class="italic text-foreground hover:underline"
         >
-          Langs
+          CBE
         </a>
       </p>
     </div>
