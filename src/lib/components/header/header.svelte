@@ -32,7 +32,7 @@
           rel="noopener noreferrer"
           class="hover:underline"
         >
-          Systems Engineer
+          Systems Executive
         </a>
         @
         <a
