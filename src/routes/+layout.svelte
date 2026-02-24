@@ -4,10 +4,6 @@
   import { toast } from "svelte-sonner";
   import { ModeWatcher } from "mode-watcher";
   import { Toaster } from "$lib/components/ui/sonner";
-  import Header from "@/components/header/header.svelte";
-  import Projects from "@/components/projects/projects.svelte";
-  import ShortBio from "@/components/short-bio/short-bio.svelte";
-  import SkillsList from "@/components/skills-list/skills-list.svelte";
   import { loadGoogleAnalytics } from "$lib/utils/loadGoogleAnalytics";
   import { updateGoogleAnalyticsConsent } from "@/utils/updateGoogleAnalyticsConsent";
 
@@ -54,9 +50,5 @@
 <div class="mx-auto pb-5 w-[80%] md:w-[50%]">
   <Toaster position="bottom-right" />
   <ModeWatcher />
-  <Header />
-  <ShortBio />
-  <SkillsList />
-  <Projects />
   <slot />
 </div>
