@@ -1,4 +1,6 @@
 <script lang="ts">
+  import * as Carousel from "$lib/components/ui/carousel";
+
   export let data;
 </script>
 
@@ -14,6 +16,35 @@
     <h1 class="text-2xl md:text-3xl font-bold">{data.project.title}</h1>
     <p class="text-muted-foreground">{data.project.description}</p>
   </section>
+
+  {#if data.project.screenshots.length > 0}
+    <section class="space-y-3">
+      <h2 class="text-lg font-semibold">Screenshots</h2>
+      <Carousel.Root class="w-full max-w-4xl mx-auto">
+        <Carousel.Content>
+          {#each data.project.screenshots as screenshot}
+            <Carousel.Item>
+              <figure class="rounded-lg border overflow-hidden bg-card">
+                <img
+                  src={screenshot.src}
+                  alt={screenshot.alt}
+                  class="w-full aspect-video object-cover"
+                  loading="lazy"
+                />
+                {#if screenshot.caption}
+                  <figcaption class="p-3 text-sm text-muted-foreground">
+                    {screenshot.caption}
+                  </figcaption>
+                {/if}
+              </figure>
+            </Carousel.Item>
+          {/each}
+        </Carousel.Content>
+        <Carousel.Previous class="left-2 md:-left-12" />
+        <Carousel.Next class="right-2 md:-right-12" />
+      </Carousel.Root>
+    </section>
+  {/if}
 
   <section class="space-y-3">
     <h2 class="text-lg font-semibold">Overview</h2>

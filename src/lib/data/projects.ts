@@ -1,3 +1,9 @@
+export type ProjectScreenshot = {
+  src: string;
+  alt: string;
+  caption?: string;
+};
+
 export type Project = {
   slug: string;
   title: string;
@@ -6,6 +12,7 @@ export type Project = {
   details: string;
   stack: string[];
   repoUrl?: string;
+  screenshots: ProjectScreenshot[];
 };
 
 export const projects: Project[] = [
@@ -19,6 +26,23 @@ export const projects: Project[] = [
       "Loom uses Terminal.Gui for an interactive TUI, Spectre.Console for CLI commands, and open Markdown/JSON files for persistent storage. An ASP.NET Web API exposes Loom's core functionality for integration with external tools, enabling future desktop, mobile, or automation clients.",
     stack: [".NET", "Terminal.Gui", "Spectre.Console", "ASP.NET Core Web API"],
     repoUrl: "https://github.com/Martin-Melody/Loom",
+    screenshots: [
+      {
+        src: "/project-screenshots/loom/board-view.svg",
+        alt: "Loom board layout showing multiple columns",
+        caption: "Board view for planning project tasks.",
+      },
+      {
+        src: "/project-screenshots/loom/task-details.svg",
+        alt: "Loom task details with sidebar and metadata",
+        caption: "Task details view with rich metadata.",
+      },
+      {
+        src: "/project-screenshots/loom/cli-summary.svg",
+        alt: "Loom command-line summary output",
+        caption: "CLI reporting command output.",
+      },
+    ],
   },
   {
     slug: "logit",
@@ -30,6 +54,7 @@ export const projects: Project[] = [
       "LogIt makes it easy to plan, record, and review workouts anywhere—whether you're online, offline, or running your own server.",
     stack: ["TypeScript", "Offline-first architecture", "Self-hosting"],
     repoUrl: "https://github.com/LogIt-FitnessApp",
+    screenshots: [],
   },
   {
     slug: "resume-website",
@@ -41,16 +66,17 @@ export const projects: Project[] = [
       "This site is fully responsive and highlights key projects and skills. It uses static content and pre-rendering for fast performance.",
     stack: ["SvelteKit", "Tailwind CSS", "GitHub Actions", "GitHub Pages"],
     repoUrl: "https://github.com/Martin-Melody/resume-website",
+    screenshots: [],
   },
   {
     slug: "e-learning-app-capstone",
     title: "E-Learning App (Capstone)",
     description: "Cloud-hosted mobile/web education platform",
-    summary:
-      "Built with Ionic Angular, Express, and Cosmos DB.",
+    summary: "Built with Ionic Angular, Express, and Cosmos DB.",
     details:
       "Hosted on Azure VM and Blob Storage. Integrated CI/CD via Azure DevOps and delivered a mobile-first responsive design.",
     stack: ["Ionic Angular", "Express", "Cosmos DB", "Azure"],
+    screenshots: [],
   },
   {
     slug: "insecure-web-app-pentesting-project",
@@ -61,7 +87,10 @@ export const projects: Project[] = [
     details:
       "The project focused on OWASP ZAP testing and produced an assessment report with identified vulnerabilities and mitigations.",
     stack: ["Angular", ".NET Web API", "OWASP ZAP"],
+    screenshots: [],
   },
 ];
 
-export const projectsBySlug = new Map(projects.map((project) => [project.slug, project]));
+export const projectsBySlug = new Map(
+  projects.map((project) => [project.slug, project]),
+);
