@@ -9,12 +9,13 @@
   <meta name="description" content={data.project.description} />
 </svelte:head>
 
-<div class="mt-8 space-y-6">
+<div class="mt-8 space-y-8">
   <a href="/" class="text-sm text-primary hover:underline">← Back to home</a>
 
-  <section class="space-y-2">
+  <section class="space-y-3">
     <h1 class="text-2xl md:text-3xl font-bold">{data.project.title}</h1>
     <p class="text-muted-foreground">{data.project.description}</p>
+    <p class="leading-7">{data.project.details}</p>
   </section>
 
   {#if data.project.screenshots.length > 0}
@@ -47,8 +48,30 @@
   {/if}
 
   <section class="space-y-3">
-    <h2 class="text-lg font-semibold">Overview</h2>
-    <p>{data.project.details}</p>
+    <h2 class="text-lg font-semibold">Why I built this</h2>
+    <div class="space-y-3">
+      {#each data.project.narrative.motivation as paragraph}
+        <p class="leading-7">{paragraph}</p>
+      {/each}
+    </div>
+  </section>
+
+  <section class="space-y-3">
+    <h2 class="text-lg font-semibold">How I approached it</h2>
+    <div class="space-y-3">
+      {#each data.project.narrative.approach as paragraph}
+        <p class="leading-7">{paragraph}</p>
+      {/each}
+    </div>
+  </section>
+
+  <section class="space-y-3">
+    <h2 class="text-lg font-semibold">Challenges and lessons</h2>
+    <div class="space-y-3">
+      {#each data.project.narrative.challenges as paragraph}
+        <p class="leading-7">{paragraph}</p>
+      {/each}
+    </div>
   </section>
 
   <section class="space-y-3">
