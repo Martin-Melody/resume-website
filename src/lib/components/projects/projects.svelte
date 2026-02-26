@@ -7,6 +7,7 @@
     highlights: string[];
     tags: string[];
     link?: string;
+    detailPath?: string;
     featured?: boolean;
   };
 
@@ -19,6 +20,7 @@
         "Supports local JSON storage by default, with optional API-backed remote mode via ASP.NET endpoints.",
       ],
       tags: [".NET", "Terminal.Gui", "CLI", "Local-first", "Web API"],
+      detailPath: "/projects/loom",
       link: "https://github.com/Martin-Melody/Loom",
       featured: true,
     },
@@ -30,6 +32,7 @@
         "Offline-first by design: uses local storage on web and SQLite on native builds.",
       ],
       tags: ["SvelteKit", "Capacitor", "SQLite", "Offline-first", "Fitness"],
+      detailPath: "/projects/logit",
       link: "https://github.com/LogIt-FitnessApp",
       featured: true,
     },
@@ -62,7 +65,6 @@
       tags: ["OWASP ZAP", "Angular", ".NET Web API", "Security"],
     },
   ];
-
 </script>
 
 <section id="projects" class="py-8">
@@ -73,7 +75,7 @@
 
   <div class="grid gap-4 md:gap-6 grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3">
     {#each projects as project}
-      <div class={`h-full transition-shadow ${project.link ? "hover:shadow-lg" : ""}`}>
+      <div class={`h-full transition-shadow ${project.link || project.detailPath ? "hover:shadow-lg" : ""}`}>
         <Card.Root class={`h-full flex flex-col ${project.featured ? "border-primary/50" : ""}`}>
           <Card.Header class="pb-2 md:pb-3 px-4 md:px-6 pt-4 md:pt-6">
             <div class="flex flex-wrap gap-2 mb-3">
@@ -94,16 +96,22 @@
                 <li>{highlight}</li>
               {/each}
             </ul>
-            {#if project.link}
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="mt-4 inline-block text-xs md:text-sm text-primary hover:underline"
-              >
-                View project →
-              </a>
-            {/if}
+
+            <div class="mt-4 flex flex-wrap gap-3 text-xs md:text-sm">
+              {#if project.detailPath}
+                <a href={project.detailPath} class="text-primary hover:underline">Read case study →</a>
+              {/if}
+              {#if project.link}
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-primary/90 hover:text-primary hover:underline"
+                >
+                  View repo ↗
+                </a>
+              {/if}
+            </div>
           </Card.Content>
         </Card.Root>
       </div>
