@@ -1,6 +1,7 @@
 <script lang="ts">
   import "../app.css";
   import { onMount } from "svelte";
+  import { afterNavigate } from "$app/navigation";
   import { toast } from "svelte-sonner";
   import { ModeWatcher } from "mode-watcher";
   import { Toaster } from "$lib/components/ui/sonner";
@@ -24,13 +25,14 @@
           label: "Accept",
           onClick: () => {
             localStorage.setItem("ga_consent", "granted");
-            location.reload();
+            updateGoogleAnalyticsConsent(true);
           },
         },
         cancel: {
           label: "Decline",
           onClick: () => {
             localStorage.setItem("ga_consent", "denied");
+            updateGoogleAnalyticsConsent(false);
           },
         },
         duration: Infinity,
@@ -42,6 +44,21 @@
     } else {
       updateGoogleAnalyticsConsent(consent === "granted");
     }
+
+    const untrack = afterNavigate(() => {
+      if (localStorage.getItem("ga_consent") !== "granted") return;
+      if (typeof window.gtag !== "function") return;
+
+      window.gtag("event", "page_view", {
+        page_path: window.location.pathname + window.location.search,
+        page_title: document.title,
+        page_location: window.location.href,
+      });
+    });
+
+    return () => {
+      untrack();
+    };
   });
 
   export let data;

@@ -30,23 +30,12 @@ export function loadGoogleAnalytics() {
   script.async = true;
   script.src = "https://www.googletagmanager.com/gtag/js?id=G-3MH7YWV37D";
 
+  // Initialize queue timestamp before script load
+  window.gtag("js", new Date());
+
   // Handle onload
   script.onload = () => {
     window.gtagLoaded = true;
-    console.log("✅ Google Analytics script loaded");
-
-    // Check if user already granted consent
-    const consent = localStorage.getItem("ga_consent");
-    if (consent === "granted") {
-      window.gtag("consent", "update", {
-        analytics_storage: "granted",
-        ad_storage: "granted",
-      });
-
-      window.gtag("config", "G-3MH7YWV37D", {
-        anonymize_ip: true,
-      });
-    }
   };
 
   document.head.appendChild(script);

@@ -75,46 +75,57 @@
 
   <div class="grid gap-4 md:gap-6 grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3">
     {#each projects as project}
-      <div class={`h-full transition-shadow ${project.link || project.detailPath ? "hover:shadow-lg" : ""}`}>
-        <Card.Root class={`h-full flex flex-col ${project.featured ? "border-primary/50" : ""}`}>
-          <Card.Header class="pb-2 md:pb-3 px-4 md:px-6 pt-4 md:pt-6">
-            <div class="flex flex-wrap gap-2 mb-3">
-              {#each project.tags as tag}
-                <span class="text-xs px-2 py-1 rounded-full bg-secondary text-secondary-foreground">
-                  {tag}
-                </span>
-              {/each}
-            </div>
-            <Card.Title class="text-base md:text-lg">{project.title}</Card.Title>
-            <Card.Description class="text-sm md:text-base text-muted-foreground">
-              {project.summary}
-            </Card.Description>
-          </Card.Header>
-          <Card.Content class="flex-1 pt-0 px-4 md:px-6 pb-4 md:pb-6">
-            <ul class="list-disc pl-5 space-y-1.5 text-sm md:text-base text-muted-foreground leading-6">
-              {#each project.highlights as highlight}
-                <li>{highlight}</li>
-              {/each}
-            </ul>
-
-            <div class="mt-4 flex flex-wrap gap-3 text-xs md:text-sm">
-              {#if project.detailPath}
-                <a href={project.detailPath} class="text-primary hover:underline">Showcase →</a>
-              {/if}
-              {#if project.link}
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-primary/90 hover:text-primary hover:underline"
-                >
-                  View repo ↗
-                </a>
-              {/if}
-            </div>
-          </Card.Content>
-        </Card.Root>
-      </div>
+      {#if project.detailPath}
+        <a href={project.detailPath} class="h-full block rounded-lg transition-shadow hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+          <Card.Root class={`h-full flex flex-col ${project.featured ? "border-primary/50" : ""}`}>
+            <Card.Header class="pb-2 md:pb-3 px-4 md:px-6 pt-4 md:pt-6">
+              <div class="flex flex-wrap gap-2 mb-3">
+                {#each project.tags as tag}
+                  <span class="text-xs px-2 py-1 rounded-full bg-secondary text-secondary-foreground">
+                    {tag}
+                  </span>
+                {/each}
+              </div>
+              <Card.Title class="text-base md:text-lg">{project.title}</Card.Title>
+              <Card.Description class="text-sm md:text-base text-muted-foreground">
+                {project.summary}
+              </Card.Description>
+            </Card.Header>
+            <Card.Content class="flex-1 pt-0 px-4 md:px-6 pb-4 md:pb-6">
+              <ul class="list-disc pl-5 space-y-1.5 text-sm md:text-base text-muted-foreground leading-6">
+                {#each project.highlights as highlight}
+                  <li>{highlight}</li>
+                {/each}
+              </ul>
+            </Card.Content>
+          </Card.Root>
+        </a>
+      {:else}
+        <div class="h-full">
+          <Card.Root class={`h-full flex flex-col ${project.featured ? "border-primary/50" : ""}`}>
+            <Card.Header class="pb-2 md:pb-3 px-4 md:px-6 pt-4 md:pt-6">
+              <div class="flex flex-wrap gap-2 mb-3">
+                {#each project.tags as tag}
+                  <span class="text-xs px-2 py-1 rounded-full bg-secondary text-secondary-foreground">
+                    {tag}
+                  </span>
+                {/each}
+              </div>
+              <Card.Title class="text-base md:text-lg">{project.title}</Card.Title>
+              <Card.Description class="text-sm md:text-base text-muted-foreground">
+                {project.summary}
+              </Card.Description>
+            </Card.Header>
+            <Card.Content class="flex-1 pt-0 px-4 md:px-6 pb-4 md:pb-6">
+              <ul class="list-disc pl-5 space-y-1.5 text-sm md:text-base text-muted-foreground leading-6">
+                {#each project.highlights as highlight}
+                  <li>{highlight}</li>
+                {/each}
+              </ul>
+            </Card.Content>
+          </Card.Root>
+        </div>
+      {/if}
     {/each}
   </div>
 </section>
