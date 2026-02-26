@@ -39,7 +39,7 @@
           <img
             src={item.src}
             alt={item.alt}
-            class="w-full h-48 object-cover bg-secondary/20"
+            class="w-full h-auto object-contain bg-secondary/20"
             loading="lazy"
             onerror={() => markFailed(item.src)}
           />
