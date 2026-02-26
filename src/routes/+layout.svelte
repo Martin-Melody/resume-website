@@ -8,6 +8,7 @@
   import Projects from "@/components/projects/projects.svelte";
   import ShortBio from "@/components/short-bio/short-bio.svelte";
   import SkillsList from "@/components/skills-list/skills-list.svelte";
+  import { page } from "$app/stores";
   import { loadGoogleAnalytics } from "$lib/utils/loadGoogleAnalytics";
   import { updateGoogleAnalyticsConsent } from "@/utils/updateGoogleAnalyticsConsent";
 
@@ -56,8 +57,11 @@
   <Toaster position="bottom-right" />
   <ModeWatcher />
   <Header />
-  <ShortBio />
-  <SkillsList />
-  <Projects />
-  <slot />
+  {#if $page.url.pathname === "/"}
+    <ShortBio />
+    <SkillsList />
+    <Projects />
+  {:else}
+    <slot />
+  {/if}
 </div>
