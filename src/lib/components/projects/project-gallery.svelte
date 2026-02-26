@@ -1,4 +1,6 @@
 <script lang="ts">
+  import * as Carousel from "$lib/components/ui/carousel";
+
   type GalleryItem = {
     src: string;
     alt: string;
@@ -25,29 +27,41 @@
     </p>
   {/if}
 
-  <div class="grid gap-4 md:grid-cols-2 items-start">
-    {#each items as item}
-      {#if failed[item.src]}
-        <div class="rounded-lg border border-dashed border-border p-6 text-sm text-muted-foreground bg-secondary/20">
-          Missing: <code>{item.src}</code>
-        </div>
-      {:else}
-        <button
-          class="text-left rounded-lg border border-border overflow-hidden hover:border-primary/50 transition-colors"
-          onclick={() => (selected = item)}
-        >
-          <img
-            src={item.src}
-            alt={item.alt}
-            class="w-full h-auto object-contain bg-secondary/20"
-            loading="lazy"
-            onerror={() => markFailed(item.src)}
-          />
-          <div class="p-3 text-sm text-muted-foreground">{item.caption}</div>
-        </button>
-      {/if}
-    {/each}
-  </div>
+  <Carousel.Root
+    opts={{ align: "center", loop: false }}
+    class="w-full"
+  >
+    <Carousel.Content>
+      {#each items as item}
+        <Carousel.Item class="basis-full">
+          {#if failed[item.src]}
+            <div class="rounded-lg border border-dashed border-border p-6 text-sm text-muted-foreground bg-secondary/20">
+              Missing: <code>{item.src}</code>
+            </div>
+          {:else}
+            <button
+              class="w-full text-left rounded-lg border border-border overflow-hidden hover:border-primary/50 transition-colors"
+              onclick={() => (selected = item)}
+            >
+              <img
+                src={item.src}
+                alt={item.alt}
+                class="w-full h-auto object-contain bg-secondary/20"
+                loading="lazy"
+                onerror={() => markFailed(item.src)}
+              />
+              <div class="p-3 text-sm text-muted-foreground">{item.caption}</div>
+            </button>
+          {/if}
+        </Carousel.Item>
+      {/each}
+    </Carousel.Content>
+
+    {#if items.length > 1}
+      <Carousel.Previous class="left-2 top-3" />
+      <Carousel.Next class="right-2 top-3" />
+    {/if}
+  </Carousel.Root>
 </section>
 
 {#if selected}
