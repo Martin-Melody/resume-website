@@ -24,12 +24,12 @@
     },
     {
       title: "LogIt",
-      summary: "Workout tracker focused on privacy and data ownership.",
+      summary: "A mobile-first workout tracker focused on fast logging and local data ownership.",
       highlights: [
-        "Works online, offline, or self-hosted.",
-        "Built for lifters who want simple, reliable tracking.",
+        "Built with SvelteKit + Capacitor, with repository-based data layers for workouts, splits, and sessions.",
+        "Offline-first by design: uses local storage on web and SQLite on native builds.",
       ],
-      tags: ["Offline-first", "Fitness", "Self-hosted"],
+      tags: ["SvelteKit", "Capacitor", "SQLite", "Offline-first", "Fitness"],
       link: "https://github.com/LogIt-FitnessApp",
       featured: true,
     },
