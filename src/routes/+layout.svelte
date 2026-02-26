@@ -17,7 +17,8 @@
     loadGoogleAnalytics();
 
     if (!consent) {
-      toast("This site uses cookies for analytics. Do you accept?", {
+      toast("Allow analytics cookies?", {
+        description: "Used only to understand site traffic and improve content.",
         action: {
           label: "Accept",
           onClick: () => {
@@ -33,9 +34,9 @@
         },
         duration: Infinity,
         actionButtonStyle:
-          "background: #10b981; color: white; border-radius: 6px; padding: 8px 16px; font-weight: 500;",
+          "background: hsl(174 60% 40%); color: white; border-radius: 6px; padding: 6px 12px; font-weight: 500;",
         cancelButtonStyle:
-          "background: #ef4444; color: white; border-radius: 6px; padding: 8px 16px; font-weight: 500;",
+          "background: hsl(0 0% 20%); color: hsl(210 40% 98%); border: 1px solid hsl(0 0% 28%); border-radius: 6px; padding: 6px 12px; font-weight: 500;",
       });
     } else {
       updateGoogleAnalyticsConsent(consent === "granted");
@@ -51,7 +52,7 @@
   <link rel="canonical" href={data.canonical} />
 </svelte:head>
 
-<div class="mx-auto pb-5 w-[80%] md:w-[50%]">
+<div class="mx-auto pb-8 w-[90%] md:w-[74%] lg:w-[64%] max-w-6xl">
   <Toaster position="bottom-right" />
   <ModeWatcher />
   <Header />

@@ -1,90 +1,112 @@
 <script lang="ts">
   import * as Card from "$lib/components/ui/card";
-  const projects = [
-    
-{
-  title: "Loom",
-  description: "Offline-first TUI project and task management app",
-  content:
-    "A local-first project and task management application built in .NET. Loom uses Terminal.Gui for an interactive TUI, Spectre.Console for CLI commands, and open Markdown/JSON files for persistent storage. An ASP.NET Web API exposes Loom’s core functionality for integration with external tools, enabling future desktop, mobile, or automation clients.",
-  link: "https://github.com/Martin-Melody/Loom",
-},
+
+  type Project = {
+    title: string;
+    summary: string;
+    highlights: string[];
+    tags: string[];
+    link?: string;
+    featured?: boolean;
+  };
+
+  const projects: Project[] = [
+    {
+      title: "Loom",
+      summary: "Offline-first task and project management app for terminal-first workflows.",
+      highlights: [
+        "Built in .NET using Terminal.Gui + Spectre.Console for TUI and CLI UX.",
+        "Exposes core features via ASP.NET Web API for future desktop/mobile clients.",
+      ],
+      tags: [".NET", "ASP.NET API", "Terminal.Gui", "Local-first"],
+      link: "https://github.com/Martin-Melody/Loom",
+      featured: true,
+    },
     {
       title: "LogIt",
-      description: "Self-hosted, offline-first workout companion",
-      content:
-        "A training app built for lifters who want complete control of their data. LogIt makes it easy to plan, record, and review workouts anywhere—whether you’re online, offline, or running your own server.",
+      summary: "Self-hosted workout companion with full control over your own data.",
+      highlights: [
+        "Plan, log, and review workouts online, offline, or on your own server.",
+        "Designed for lifters who want privacy, ownership, and consistent tracking.",
+      ],
+      tags: ["Offline-first", "Fitness", "Self-hosted"],
       link: "https://github.com/LogIt-FitnessApp",
+      featured: true,
     },
     {
       title: "Resume Website",
-      description: "Personal portfolio and resume site",
-      content:
-        "Built with SvelteKit and Tailwind CSS, deployed via GitHub Pages using GitHub Actions for CI/CD. Fully responsive and highlights key projects and skills.",
+      summary: "Responsive portfolio site focused on projects, strengths, and contact paths.",
+      highlights: [
+        "Built with SvelteKit + Tailwind CSS and deployed via GitHub Pages.",
+        "CI/CD powered by GitHub Actions.",
+      ],
+      tags: ["SvelteKit", "Tailwind", "GitHub Actions"],
       link: "https://github.com/Martin-Melody/resume-website",
     },
-
     {
       title: "E-Learning App (Capstone)",
-      description: "Cloud-hosted mobile/web education platform",
-      content:
-        "Built with Ionic Angular, Express, and Cosmos DB. Hosted on Azure VM and Blob Storage. Integrated CI/CD via Azure DevOps and delivered a mobile-first responsive design.",
+      summary: "Cloud-hosted mobile/web education platform.",
+      highlights: [
+        "Built with Ionic Angular, Express, and Cosmos DB.",
+        "Hosted on Azure VM + Blob Storage with CI/CD through Azure DevOps.",
+      ],
+      tags: ["Ionic", "Angular", "Express", "Cosmos DB", "Azure"],
     },
     {
       title: "Insecure Web App (PenTesting Project)",
-      description: "Full-stack security testing project",
-      content:
-        "Deliberately vulnerable Angular + .NET Web API app used for penetration testing with OWASP ZAP. Delivered an assessment report with identified vulnerabilities and mitigations.",
+      summary: "Deliberately vulnerable full-stack app used for security assessment practice.",
+      highlights: [
+        "Angular + .NET Web API test target scanned with OWASP ZAP.",
+        "Delivered vulnerability report with mitigation recommendations.",
+      ],
+      tags: ["OWASP ZAP", "Angular", ".NET Web API", "Security"],
     },
   ];
-  function handleClick(project: any) {
-    console.log(`Clicked on project: ${project.title}`);
-    if (project.link) {
-      window.open(project.link, "_blank");
-    }
-  }
+
 </script>
 
-<div class="mt-6 md:mt-10">
-  <p class="text-foreground font-semibold text-lg md:text-xl mb-3 md:mb-4">
-    Projects
-  </p>
-  <div
-    class="grid gap-4 md:gap-6 grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3"
-  >
+<section id="projects" class="py-8">
+  <div class="flex items-end justify-between gap-2 mb-4 md:mb-5">
+    <h2 class="text-foreground font-semibold text-lg md:text-xl">Projects</h2>
+    <span class="text-xs text-muted-foreground">Selected work</span>
+  </div>
+
+  <div class="grid gap-4 md:gap-6 grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3">
     {#each projects as project}
-      <div
-        role="button"
-        tabindex="0"
-        class="h-full transition-shadow hover:shadow-lg cursor-pointer"
-        onclick={() => handleClick(project)}
-        onkeydown={(e) => {
-          if (e.key === "Enter" || e.key === " ") {
-            e.preventDefault();
-            handleClick(project);
-          }
-        }}
-      >
-        <Card.Root class="h-full flex flex-col">
-          <Card.Header class="pb-3 md:pb-4">
-            <Card.Title class="text-base md:text-lg">{project.title}</Card.Title
-            >
-            <Card.Description class="text-sm md:text-base"
-              >{project.description}</Card.Description
-            >
+      <div class={`h-full transition-shadow ${project.link ? "hover:shadow-lg" : ""}`}>
+        <Card.Root class={`h-full flex flex-col ${project.featured ? "border-primary/50" : ""}`}>
+          <Card.Header class="pb-3">
+            <div class="flex flex-wrap gap-2 mb-3">
+              {#each project.tags as tag}
+                <span class="text-xs px-2 py-1 rounded-full bg-secondary text-secondary-foreground">
+                  {tag}
+                </span>
+              {/each}
+            </div>
+            <Card.Title class="text-base md:text-lg">{project.title}</Card.Title>
+            <Card.Description class="text-sm md:text-base text-muted-foreground">
+              {project.summary}
+            </Card.Description>
           </Card.Header>
-          <Card.Content class="flex-1 pt-0 md:pt-2">
-            <p class="text-sm md:text-base">{project.content}</p>
+          <Card.Content class="flex-1 pt-0">
+            <ul class="list-disc pl-5 space-y-2 text-sm md:text-base text-muted-foreground leading-6">
+              {#each project.highlights as highlight}
+                <li>{highlight}</li>
+              {/each}
+            </ul>
             {#if project.link}
-              <p
-                class="mt-3 md:mt-4 text-xs md:text-sm text-primary hover:underline"
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mt-4 inline-block text-xs md:text-sm text-primary hover:underline"
               >
                 View project →
-              </p>
+              </a>
             {/if}
           </Card.Content>
         </Card.Root>
       </div>
     {/each}
   </div>
-</div>
+</section>

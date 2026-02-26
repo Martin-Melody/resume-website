@@ -1,20 +1,15 @@
 <script lang="ts">
   import * as Avatar from "$lib/components/ui/avatar";
-  import { Github } from "lucide-svelte";
-  import { Linkedin } from "lucide-svelte";
-  import { Mail } from "lucide-svelte";
+  import { Github, Linkedin, Mail } from "lucide-svelte";
   import ToggleTheme from "@/components/toggle-theme/toggle-theme.svelte";
   import Button from "../ui/button/button.svelte";
   import { toast } from "svelte-sonner";
 </script>
 
-<!-- TODO: might need to change this avatar link at some point -->
-
 <div
-  class="container px-4 py-5 mt-10 flex flex-col lg:flex-row justify-between items-center gap-4 lg:gap-0"
+  class="container px-2 md:px-4 py-6 mt-6 md:mt-10 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4"
 >
-  <!-- Left Side: Avatar + Info -->
-  <div class="flex items-center text-center sm:text-left">
+  <div class="flex items-center text-left">
     <div class="avatar mr-3 shrink-0">
       <Avatar.Root>
         <Avatar.Image src="/head-shot.webp" alt="Martin Melody headshot" />
@@ -23,18 +18,9 @@
     </div>
 
     <div class="info flex flex-col justify-center">
-      <p class="leading-3 text-sm md:text-base lg:text-lg font-semibold">
-        Martin Melody
-      </p>
-      <p class="text-muted text-sm">
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          class="hover:underline"
-        >
-          Systems Executive
-        </a>
-        @
+      <p class="leading-tight text-base md:text-lg font-semibold">Martin Melody</p>
+      <p class="text-muted-foreground text-sm md:text-base">
+        Systems Installation Engineer @
         <a
           href="https://www.cbe.ie/"
           target="_blank"
@@ -47,24 +33,25 @@
     </div>
   </div>
 
-  <!-- Right Side: Icons -->
-  <div class="link-icons flex items-center gap-2">
+  <div class="link-icons flex items-center gap-2 self-end lg:self-auto">
     <Button
       variant="ghost"
       size="icon"
+      aria-label="Open GitHub profile"
       onclick={() =>
         window.open("https://www.github.com/martin-melody", "_blank")}
     >
-      <Github class="text-muted hover:text-foreground" />
+      <Github class="text-muted-foreground hover:text-foreground" />
     </Button>
 
     <Button
       variant="ghost"
       size="icon"
+      aria-label="Open LinkedIn profile"
       onclick={() =>
         window.open("https://www.linkedin.com/in/martinmelody/", "_blank")}
     >
-      <Linkedin class="text-muted hover:text-foreground" />
+      <Linkedin class="text-muted-foreground hover:text-foreground" />
     </Button>
 
     <Button
@@ -81,12 +68,12 @@
           toast.success("Email copied to clipboard.", {
             description: "Email me with any questions or inquiries!",
           });
-        } catch (err) {
+        } catch {
           toast.error("Failed to copy email.");
         }
       }}
     >
-      <Mail class="text-muted hover:text-foreground" />
+      <Mail class="text-muted-foreground hover:text-foreground" />
     </Button>
 
     <ToggleTheme />
