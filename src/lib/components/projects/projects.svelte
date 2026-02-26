@@ -13,10 +13,10 @@
   const projects: Project[] = [
     {
       title: "Loom",
-      summary: "Offline-first task and project management app for terminal-first workflows.",
+      summary: "A local-first task manager I built for terminal-heavy workflows.",
       highlights: [
-        "Built in .NET using Terminal.Gui + Spectre.Console for TUI and CLI UX.",
-        "Exposes core features via ASP.NET Web API for future desktop/mobile clients.",
+        "Built in .NET with Terminal.Gui and Spectre.Console.",
+        "Includes an ASP.NET Web API layer for integrations.",
       ],
       tags: [".NET", "ASP.NET API", "Terminal.Gui", "Local-first"],
       link: "https://github.com/Martin-Melody/Loom",
@@ -24,10 +24,10 @@
     },
     {
       title: "LogIt",
-      summary: "Self-hosted workout companion with full control over your own data.",
+      summary: "Workout tracker focused on privacy and data ownership.",
       highlights: [
-        "Plan, log, and review workouts online, offline, or on your own server.",
-        "Designed for lifters who want privacy, ownership, and consistent tracking.",
+        "Works online, offline, or self-hosted.",
+        "Built for lifters who want simple, reliable tracking.",
       ],
       tags: ["Offline-first", "Fitness", "Self-hosted"],
       link: "https://github.com/LogIt-FitnessApp",
@@ -35,29 +35,29 @@
     },
     {
       title: "Resume Website",
-      summary: "Responsive portfolio site focused on projects, strengths, and contact paths.",
+      summary: "My personal portfolio site (this one).",
       highlights: [
-        "Built with SvelteKit + Tailwind CSS and deployed via GitHub Pages.",
-        "CI/CD powered by GitHub Actions.",
+        "Built with SvelteKit + Tailwind and deployed on GitHub Pages.",
+        "Automated deploys with GitHub Actions.",
       ],
       tags: ["SvelteKit", "Tailwind", "GitHub Actions"],
       link: "https://github.com/Martin-Melody/resume-website",
     },
     {
       title: "E-Learning App (Capstone)",
-      summary: "Cloud-hosted mobile/web education platform.",
+      summary: "Capstone project for a cloud-hosted education platform.",
       highlights: [
         "Built with Ionic Angular, Express, and Cosmos DB.",
-        "Hosted on Azure VM + Blob Storage with CI/CD through Azure DevOps.",
+        "Deployed on Azure with CI/CD via Azure DevOps.",
       ],
       tags: ["Ionic", "Angular", "Express", "Cosmos DB", "Azure"],
     },
     {
       title: "Insecure Web App (PenTesting Project)",
-      summary: "Deliberately vulnerable full-stack app used for security assessment practice.",
+      summary: "A deliberately vulnerable app built for security testing practice.",
       highlights: [
-        "Angular + .NET Web API test target scanned with OWASP ZAP.",
-        "Delivered vulnerability report with mitigation recommendations.",
+        "Angular + .NET Web API target tested with OWASP ZAP.",
+        "Produced a report with findings and mitigation steps.",
       ],
       tags: ["OWASP ZAP", "Angular", ".NET Web API", "Security"],
     },
@@ -75,7 +75,7 @@
     {#each projects as project}
       <div class={`h-full transition-shadow ${project.link ? "hover:shadow-lg" : ""}`}>
         <Card.Root class={`h-full flex flex-col ${project.featured ? "border-primary/50" : ""}`}>
-          <Card.Header class="pb-3">
+          <Card.Header class="pb-2 md:pb-3 px-4 md:px-6 pt-4 md:pt-6">
             <div class="flex flex-wrap gap-2 mb-3">
               {#each project.tags as tag}
                 <span class="text-xs px-2 py-1 rounded-full bg-secondary text-secondary-foreground">
@@ -88,8 +88,8 @@
               {project.summary}
             </Card.Description>
           </Card.Header>
-          <Card.Content class="flex-1 pt-0">
-            <ul class="list-disc pl-5 space-y-2 text-sm md:text-base text-muted-foreground leading-6">
+          <Card.Content class="flex-1 pt-0 px-4 md:px-6 pb-4 md:pb-6">
+            <ul class="list-disc pl-5 space-y-1.5 text-sm md:text-base text-muted-foreground leading-6">
               {#each project.highlights as highlight}
                 <li>{highlight}</li>
               {/each}

@@ -7,13 +7,12 @@
     Junior Software Developer
   </p>
   <h1 class="text-2xl md:text-3xl font-bold text-foreground leading-tight">
-    .NET and Angular developer building practical, reliable software.
+    I build .NET and Angular apps that are simple, useful, and built to last.
   </h1>
-  <p class="mt-3 text-sm md:text-base text-muted-foreground leading-7 max-w-3xl">
-    I build web apps and APIs with a focus on offline-first UX and maintainable
-    architecture. Currently a Systems Installation Engineer at CBE in Mayo, with
-    prior backend and testing experience from a 6-month internship at the
-    Department of Social Protection.
+  <p class="mt-3 text-sm md:text-base text-muted-foreground leading-7 max-w-2xl">
+    I’m a junior developer based in Mayo. By day I work as a Systems Installation
+    Engineer at CBE, and I’ve also done backend/testing work during a 6-month
+    internship with the Department of Social Protection.
   </p>
 
   <div class="mt-5 flex flex-wrap gap-2 text-xs md:text-sm">
@@ -28,12 +27,12 @@
     >
   </div>
 
-  <div class="mt-6 flex flex-wrap gap-3">
-    <Button href="#projects" class="font-medium">View Projects</Button>
+  <div class="mt-6 grid grid-cols-1 sm:flex sm:flex-wrap gap-3">
+    <Button href="#projects" class="font-medium w-full sm:w-auto">View Projects</Button>
     <Button
       href="mailto:martinmelody.work@gmail.com"
       variant="outline"
-      class="font-medium"
+      class="font-medium w-full sm:w-auto"
       >Contact Me</Button
     >
   </div>

@@ -52,7 +52,7 @@
   <link rel="canonical" href={data.canonical} />
 </svelte:head>
 
-<div class="mx-auto pb-8 w-[90%] md:w-[74%] lg:w-[64%] max-w-6xl">
+<div class="mx-auto pb-8 w-[94%] sm:w-[92%] md:w-[82%] lg:w-[68%] max-w-5xl">
   <Toaster position="bottom-right" />
   <ModeWatcher />
   <Header />
