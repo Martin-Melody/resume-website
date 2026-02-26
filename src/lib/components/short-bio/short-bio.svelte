@@ -10,7 +10,7 @@
     Junior developer building clean, reliable web apps and APIs.
   </h1>
   <p class="mt-3 text-sm md:text-base text-muted-foreground leading-7 max-w-2xl">
-    I’m based in Mayo and currently focused on .NET and SvelteKit, with previous
+    I’m based in Sligo and currently focused on .NET and SvelteKit, with previous
     hands-on work in Angular and backend testing. I care about clean architecture,
     offline-first thinking, and building software that stays maintainable over time.
   </p>
@@ -27,7 +27,7 @@
       >Available for freelance websites and web apps</span
     >
     <span class="rounded-full border border-border px-3 py-1 text-muted-foreground"
-      >Mayo, Ireland</span
+      >Sligo, Ireland</span
     >
     <span class="rounded-full border border-border px-3 py-1 text-muted-foreground"
       >Remote / Hybrid</span
