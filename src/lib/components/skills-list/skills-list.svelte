@@ -1,137 +1,59 @@
 <script lang="ts">
-  import * as Carousel from "$lib/components/ui/carousel/index.js";
+  const sections = [
+    {
+      title: "Core",
+      skills: [
+        "C# / .NET Web API",
+        "SvelteKit",
+        "TypeScript",
+        "SQL",
+        "REST APIs",
+      ],
+    },
+    {
+      title: "Broad Experience",
+      skills: [
+        "Angular",
+        "Ionic",
+        "Entity Framework Core",
+        "Express",
+        "PostgreSQL",
+        "SQL Server",
+        "Cosmos DB",
+        "MongoDB",
+      ],
+    },
+    {
+      title: "Tools & Delivery",
+      skills: [
+        "Azure VMs / Blob Storage",
+        "CI/CD (Azure DevOps)",
+        "Git & GitHub",
+        "PowerShell",
+      ],
+    },
+  ];
 </script>
 
-<div class="mb-5">
-  <p class="text-foreground font-semibold mb-2 text-sm md:text-base">
-    Technical Skills
-  </p>
+<section class="py-8 border-b border-border/70">
+  <div class="flex items-center justify-between gap-2 mb-3">
+    <h2 class="text-foreground font-semibold text-lg md:text-xl">Technical Skills</h2>
+    <span class="text-xs text-muted-foreground">Current stack + wider experience</span>
+  </div>
 
-  <!-- Mobile Carousel -->
-  <div class="block lg:hidden">
-    <Carousel.Root
-      opts={{
-        align: "start",
-        loop: false,
-      }}
-    >
-      <Carousel.Content class="-ml-2">
-        <Carousel.Item class="pl-2 basis-4/5 flex">
-          <div class="p-3 border rounded-lg w-full flex flex-col">
-            <p class="font-medium text-xs text-foreground mb-2">Languages</p>
-            <ul
-              class="list-disc pl-4 text-muted-foreground text-xs space-y-1 flex-1"
+  <div class="grid gap-4 md:gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    {#each sections as section}
+      <div class="rounded-lg border border-border p-4">
+        <p class="font-medium text-sm text-foreground mb-3">{section.title}</p>
+        <div class="flex flex-wrap gap-2">
+          {#each section.skills as skill}
+            <span
+              class="text-xs md:text-sm px-2.5 py-1 rounded-full bg-secondary text-secondary-foreground"
+              >{skill}</span
             >
-              <li>TypeScript</li>
-              <li>C#</li>
-              <li>SQL</li>
-            </ul>
-          </div>
-        </Carousel.Item>
-        <Carousel.Item class="pl-2 basis-4/5 flex">
-          <div class="p-3 border rounded-lg w-full flex flex-col">
-            <p class="font-medium text-xs text-foreground mb-2">Frontend</p>
-            <ul
-              class="list-disc pl-4 text-muted-foreground text-xs space-y-1 flex-1"
-            >
-              <li>Angular</li>
-              <li>Ionic</li>
-              <li>SvelteKit</li>
-              <li>React Native</li>
-            </ul>
-          </div>
-        </Carousel.Item>
-        <Carousel.Item class="pl-2 basis-4/5 flex">
-          <div class="p-3 border rounded-lg w-full flex flex-col">
-            <p class="font-medium text-xs text-foreground mb-2">Backend</p>
-            <ul
-              class="list-disc pl-4 text-muted-foreground text-xs space-y-1 flex-1"
-            >
-              <li>.NET Web API</li>
-              <li>Entity Framework Core</li>
-              <li>Express</li>
-            </ul>
-          </div>
-        </Carousel.Item>
-        <Carousel.Item class="pl-2 basis-4/5 flex">
-          <div class="p-3 border rounded-lg w-full flex flex-col">
-            <p class="font-medium text-xs text-foreground mb-2">Databases</p>
-            <ul
-              class="list-disc pl-4 text-muted-foreground text-xs space-y-1 flex-1"
-            >
-              <li>SQLite</li>
-              <li>PostgreSQL</li>
-              <li>SQL Server</li>
-              <li>Cosmos DB</li>
-              <li>MongoDB</li>
-            </ul>
-          </div>
-        </Carousel.Item>
-        <Carousel.Item class="pl-2 basis-4/5 flex">
-          <div class="p-3 border rounded-lg w-full flex flex-col">
-            <p class="font-medium text-xs text-foreground mb-2">
-              Cloud & DevOps
-            </p>
-            <ul
-              class="list-disc pl-4 text-muted-foreground text-xs space-y-1 flex-1"
-            >
-              <li>Azure VMs / Blob Storage</li>
-              <li>CI/CD (Azure DevOps)</li>
-              <li>Git & GitHub</li>
-              <li>PowerShell scripting</li>
-            </ul>
-          </div>
-        </Carousel.Item>
-      </Carousel.Content>
-      <Carousel.Previous class="hidden sm:flex" />
-      <Carousel.Next class="hidden sm:flex" />
-    </Carousel.Root>
+          {/each}
+        </div>
+      </div>
+    {/each}
   </div>
-  <!-- Desktop Grid (unchanged) -->
-  <div class="hidden lg:grid grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-4">
-    <div>
-      <p class="font-medium text-sm text-foreground mb-1">Languages</p>
-      <ul class="list-disc pl-5 text-muted-foreground text-sm">
-        <li>TypeScript</li>
-        <li>C#</li>
-        <li>SQL</li>
-      </ul>
-    </div>
-    <div>
-      <p class="font-medium text-sm text-foreground mb-1">Frontend</p>
-      <ul class="list-disc pl-5 text-muted-foreground text-sm">
-        <li>Angular</li>
-        <li>Ionic</li>
-        <li>SvelteKit</li>
-        <li>React Native</li>
-      </ul>
-    </div>
-    <div>
-      <p class="font-medium text-sm text-foreground mb-1">Backend</p>
-      <ul class="list-disc pl-5 text-muted-foreground text-sm">
-        <li>.NET Web API</li>
-        <li>Entity Framework Core</li>
-        <li>Express</li>
-      </ul>
-    </div>
-    <div>
-      <p class="font-medium text-sm text-foreground mb-1">Databases</p>
-      <ul class="list-disc pl-5 text-muted-foreground text-sm">
-        <li>SQLite</li>
-        <li>PostgreSQL</li>
-        <li>SQL Server</li>
-        <li>Cosmos DB</li>
-        <li>MongoDB</li>
-      </ul>
-    </div>
-    <div>
-      <p class="font-medium text-sm text-foreground mb-1">Cloud & DevOps</p>
-      <ul class="list-disc pl-5 text-muted-foreground text-sm">
-        <li>Azure VMs / Blob Storage</li>
-        <li>CI/CD (Azure DevOps)</li>
-        <li>Git & GitHub</li>
-        <li>PowerShell scripting</li>
-      </ul>
-    </div>
-  </div>
-</div>
+</section>

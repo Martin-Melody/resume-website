@@ -8,6 +8,7 @@
   import Projects from "@/components/projects/projects.svelte";
   import ShortBio from "@/components/short-bio/short-bio.svelte";
   import SkillsList from "@/components/skills-list/skills-list.svelte";
+  import { page } from "$app/stores";
   import { loadGoogleAnalytics } from "$lib/utils/loadGoogleAnalytics";
   import { updateGoogleAnalyticsConsent } from "@/utils/updateGoogleAnalyticsConsent";
 
@@ -17,7 +18,8 @@
     loadGoogleAnalytics();
 
     if (!consent) {
-      toast("This site uses cookies for analytics. Do you accept?", {
+      toast("Allow analytics cookies?", {
+        description: "Used only to understand site traffic and improve content.",
         action: {
           label: "Accept",
           onClick: () => {
@@ -33,9 +35,9 @@
         },
         duration: Infinity,
         actionButtonStyle:
-          "background: #10b981; color: white; border-radius: 6px; padding: 8px 16px; font-weight: 500;",
+          "background: hsl(174 60% 40%); color: white; border-radius: 6px; padding: 6px 12px; font-weight: 500;",
         cancelButtonStyle:
-          "background: #ef4444; color: white; border-radius: 6px; padding: 8px 16px; font-weight: 500;",
+          "background: hsl(0 0% 20%); color: hsl(210 40% 98%); border: 1px solid hsl(0 0% 28%); border-radius: 6px; padding: 6px 12px; font-weight: 500;",
       });
     } else {
       updateGoogleAnalyticsConsent(consent === "granted");
@@ -51,12 +53,15 @@
   <link rel="canonical" href={data.canonical} />
 </svelte:head>
 
-<div class="mx-auto pb-5 w-[80%] md:w-[50%]">
+<div class="mx-auto pb-8 w-[94%] sm:w-[92%] md:w-[82%] lg:w-[68%] max-w-5xl">
   <Toaster position="bottom-right" />
   <ModeWatcher />
   <Header />
-  <ShortBio />
-  <SkillsList />
-  <Projects />
-  <slot />
+  {#if $page.url.pathname === "/"}
+    <ShortBio />
+    <SkillsList />
+    <Projects />
+  {:else}
+    <slot />
+  {/if}
 </div>
