@@ -13,12 +13,12 @@
   const projects: Project[] = [
     {
       title: "Loom",
-      summary: "A local-first task manager I built for terminal-heavy workflows.",
+      summary: "A local-first task manager for terminal workflows with optional remote sync mode.",
       highlights: [
-        "Built in .NET with Terminal.Gui and Spectre.Console.",
-        "Includes an ASP.NET Web API layer for integrations.",
+        "Built in .NET with a Terminal.Gui interface and command-driven workflows.",
+        "Supports local JSON storage by default, with optional API-backed remote mode via ASP.NET endpoints.",
       ],
-      tags: [".NET", "ASP.NET API", "Terminal.Gui", "Local-first"],
+      tags: [".NET", "Terminal.Gui", "CLI", "Local-first", "Web API"],
       link: "https://github.com/Martin-Melody/Loom",
       featured: true,
     },
