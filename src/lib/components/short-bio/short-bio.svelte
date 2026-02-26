@@ -7,13 +7,16 @@
     Junior Software Developer
   </p>
   <h1 class="text-2xl md:text-3xl font-bold text-foreground leading-tight">
-    I build reliable web apps and APIs that are simple to use and built to last.
+    Junior developer building clean, reliable web apps and APIs.
   </h1>
   <p class="mt-3 text-sm md:text-base text-muted-foreground leading-7 max-w-2xl">
-    I’m a junior developer based in Mayo, currently focused on .NET and SvelteKit,
-    with experience in Angular and backend testing. By day I work as a Systems
-    Installation Engineer at CBE, and I completed a 6-month internship with the
-    Department of Social Protection.
+    I’m based in Mayo and currently focused on .NET and SvelteKit, with previous
+    hands-on work in Angular and backend testing. I care about clean architecture,
+    offline-first thinking, and building software that stays maintainable over time.
+  </p>
+  <p class="mt-2 text-sm md:text-base text-muted-foreground leading-7 max-w-2xl">
+    I currently work in a systems role at CBE and completed a 6-month developer
+    internship with the Department of Social Protection.
   </p>
 
   <div class="mt-5 flex flex-wrap gap-2 text-xs md:text-sm">
@@ -21,7 +24,7 @@
       >Open to junior dev opportunities</span
     >
     <span class="rounded-full border border-border px-3 py-1 text-muted-foreground"
-      >Available for freelance web projects</span
+      >Available for freelance websites and web apps</span
     >
     <span class="rounded-full border border-border px-3 py-1 text-muted-foreground"
       >Mayo, Ireland</span

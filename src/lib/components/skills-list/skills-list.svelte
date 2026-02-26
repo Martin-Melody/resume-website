@@ -3,15 +3,15 @@
     {
       title: "Core",
       skills: [
-        ".NET Web API",
-        "C#",
+        "C# / .NET Web API",
         "SvelteKit",
         "TypeScript",
         "SQL",
+        "REST APIs",
       ],
     },
     {
-      title: "Also Worked With",
+      title: "Broad Experience",
       skills: [
         "Angular",
         "Ionic",
@@ -38,7 +38,7 @@
 <section class="py-8 border-b border-border/70">
   <div class="flex items-center justify-between gap-2 mb-3">
     <h2 class="text-foreground font-semibold text-lg md:text-xl">Technical Skills</h2>
-    <span class="text-xs text-muted-foreground">Broad but practical</span>
+    <span class="text-xs text-muted-foreground">Current stack + wider experience</span>
   </div>
 
   <div class="grid gap-4 md:gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
