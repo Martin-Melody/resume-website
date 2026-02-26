@@ -25,7 +25,7 @@
     </p>
   {/if}
 
-  <div class="grid gap-4 md:grid-cols-2">
+  <div class="grid gap-4 md:grid-cols-2 items-start">
     {#each items as item}
       {#if failed[item.src]}
         <div class="rounded-lg border border-dashed border-border p-6 text-sm text-muted-foreground bg-secondary/20">

@@ -74,7 +74,6 @@
 
   <ProjectGallery
     title="Screenshots"
-    folderHint="static/project-images/logit/"
     items={logitImages}
   />
 

@@ -75,7 +75,6 @@
 
   <ProjectGallery
     title="Screenshots"
-    folderHint="static/project-images/loom/"
     items={loomImages}
   />
 
