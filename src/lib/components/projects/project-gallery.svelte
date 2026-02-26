@@ -43,13 +43,15 @@
               class="w-full text-left rounded-lg border border-border overflow-hidden hover:border-primary/50 transition-colors"
               onclick={() => (selected = item)}
             >
-              <img
-                src={item.src}
-                alt={item.alt}
-                class="w-full h-auto object-contain bg-secondary/20"
-                loading="lazy"
-                onerror={() => markFailed(item.src)}
-              />
+              <div class="w-full aspect-video bg-secondary/20 overflow-hidden flex items-center justify-center">
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  class="w-full h-full object-contain"
+                  loading="lazy"
+                  onerror={() => markFailed(item.src)}
+                />
+              </div>
               <div class="p-3 text-sm text-muted-foreground">{item.caption}</div>
             </button>
           {/if}
