@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <rect width="1200" height="700" fill="#111318"/>
+  <rect x="40" y="40" width="1120" height="620" rx="16" fill="#181b22" stroke="#2a2f3a"/>
+  <text x="80" y="120" fill="#e5e7eb" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="700">LogIt</text>
+  <text x="80" y="170" fill="#9ca3af" font-family="Inter, Arial, sans-serif" font-size="24">Session flow screenshot placeholder</text>
+</svg>

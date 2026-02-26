@@ -99,7 +99,7 @@
 
             <div class="mt-4 flex flex-wrap gap-3 text-xs md:text-sm">
               {#if project.detailPath}
-                <a href={project.detailPath} class="text-primary hover:underline">Read case study →</a>
+                <a href={project.detailPath} class="text-primary hover:underline">Showcase →</a>
               {/if}
               {#if project.link}
                 <a

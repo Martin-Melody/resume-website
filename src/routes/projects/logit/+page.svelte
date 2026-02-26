@@ -1,3 +1,20 @@
+<script lang="ts">
+  import ProjectGallery from "$lib/components/projects/project-gallery.svelte";
+
+  const logitImages = [
+    {
+      src: "/project-images/logit/logit-home.svg",
+      alt: "LogIt home",
+      caption: "Home screen with quick workout actions",
+    },
+    {
+      src: "/project-images/logit/logit-session.svg",
+      alt: "LogIt current session",
+      caption: "Current workout session flow",
+    },
+  ];
+</script>
+
 <svelte:head>
   <title>LogIt Case Study | Martin Melody</title>
   <meta
@@ -45,20 +62,11 @@
     </article>
   </div>
 
-  <section class="space-y-3">
-    <h2 class="font-semibold text-lg">Screenshots</h2>
-    <p class="text-sm text-muted-foreground">
-      Add images to <code>static/project-images/logit/</code> and update these placeholders.
-    </p>
-    <div class="grid gap-4 md:grid-cols-2">
-      <div class="rounded-lg border border-dashed border-border p-6 text-sm text-muted-foreground bg-secondary/20">
-        Add <code>logit-home.png</code> to <code>static/project-images/logit/</code>
-      </div>
-      <div class="rounded-lg border border-dashed border-border p-6 text-sm text-muted-foreground bg-secondary/20">
-        Add <code>logit-session.png</code> to <code>static/project-images/logit/</code>
-      </div>
-    </div>
-  </section>
+  <ProjectGallery
+    title="Screenshots"
+    folderHint="static/project-images/logit/"
+    items={logitImages}
+  />
 
   <div class="pt-2">
     <a

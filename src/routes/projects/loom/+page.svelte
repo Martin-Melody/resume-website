@@ -1,3 +1,20 @@
+<script lang="ts">
+  import ProjectGallery from "$lib/components/projects/project-gallery.svelte";
+
+  const loomImages = [
+    {
+      src: "/project-images/loom/loom-main.svg",
+      alt: "Loom main dashboard",
+      caption: "Main dashboard and navigation",
+    },
+    {
+      src: "/project-images/loom/loom-tasks.svg",
+      alt: "Loom task list",
+      caption: "Task list and command-driven flow",
+    },
+  ];
+</script>
+
 <svelte:head>
   <title>Loom Case Study | Martin Melody</title>
   <meta
@@ -46,20 +63,11 @@
     </article>
   </div>
 
-  <section class="space-y-3">
-    <h2 class="font-semibold text-lg">Screenshots</h2>
-    <p class="text-sm text-muted-foreground">
-      Add images to <code>static/project-images/loom/</code> and update these paths.
-    </p>
-    <div class="grid gap-4 md:grid-cols-2">
-      <div class="rounded-lg border border-dashed border-border p-6 text-sm text-muted-foreground bg-secondary/20">
-        Add <code>loom-main.png</code> to <code>static/project-images/loom/</code>
-      </div>
-      <div class="rounded-lg border border-dashed border-border p-6 text-sm text-muted-foreground bg-secondary/20">
-        Add <code>loom-tasks.png</code> to <code>static/project-images/loom/</code>
-      </div>
-    </div>
-  </section>
+  <ProjectGallery
+    title="Screenshots"
+    folderHint="static/project-images/loom/"
+    items={loomImages}
+  />
 
   <div class="pt-2">
     <a
