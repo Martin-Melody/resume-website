@@ -3,14 +3,24 @@
 
   const loomImages = [
     {
-      src: "/project-images/loom/loom-main.svg",
-      alt: "Loom main dashboard",
-      caption: "Main dashboard and navigation",
+      src: "/project-images/loom/screenshot-2026-02-26_19-49-47.png",
+      alt: "Loom dashboard",
+      caption: "Dashboard view",
     },
     {
-      src: "/project-images/loom/loom-tasks.svg",
+      src: "/project-images/loom/screenshot-2026-02-26_19-50-30.png",
       alt: "Loom task list",
-      caption: "Task list and command-driven flow",
+      caption: "Task list view",
+    },
+    {
+      src: "/project-images/loom/screenshot-2026-02-26_19-50-45.png",
+      alt: "Loom command palette",
+      caption: "Command and navigation flow",
+    },
+    {
+      src: "/project-images/loom/screenshot-2026-02-26_19-52-29.png",
+      alt: "Loom additional screen",
+      caption: "Additional workflow screen",
     },
   ];
 </script>

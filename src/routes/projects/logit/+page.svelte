@@ -3,14 +3,24 @@
 
   const logitImages = [
     {
-      src: "/project-images/logit/logit-home.svg",
-      alt: "LogIt home",
+      src: "/project-images/logit/screencapture-localhost-5173-2026-02-26-19_54_44.png",
+      alt: "LogIt home screen",
       caption: "Home screen with quick workout actions",
     },
     {
-      src: "/project-images/logit/logit-session.svg",
-      alt: "LogIt current session",
+      src: "/project-images/logit/localhost-5173-session-current-02-26-2026_08_06_PM.png",
+      alt: "LogIt active session",
       caption: "Current workout session flow",
+    },
+    {
+      src: "/project-images/logit/screencapture-localhost-5173-splits-split-vWgQjOxQ-dFylXYn6R2tv-2026-02-26-19_58_30.png",
+      alt: "LogIt split overview",
+      caption: "Split structure and progression",
+    },
+    {
+      src: "/project-images/logit/screencapture-localhost-5173-splits-split-vWgQjOxQ-dFylXYn6R2tv-days-day-1uLYrHMqlGMWQ3TxwSucy-2026-02-26-19_56_09.png",
+      alt: "LogIt split day details",
+      caption: "Day-level workout detail view",
     },
   ];
 </script>
